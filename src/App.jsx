@@ -165,7 +165,7 @@ function OutputView({ code }) {
   return (
     <div
       className={[
-        "bg-white/5 p-4 w-full text-green-600 overflow-x-scroll transition-opacity duration-500",
+        "bg-white/5 p-4 w-full text-green-600 overflow-x-scroll transition-opacity duration-500 selection:bg-slate-700 selection:text-green-500",
         (loading || code !== debouncedCode) && "opacity-30",
       ]
         .filter(Boolean)
