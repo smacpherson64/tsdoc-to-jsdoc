@@ -1,3 +1,3 @@
 # Typescript to JSDoc converter
 
-[Website](https://github.com/smacpherson64/typescript-to-jsdoc)
+[Website](https://smacpherson64.github.io/typescript-to-jsdoc/)
