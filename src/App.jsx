@@ -8,9 +8,11 @@ import { dependencies, devDependencies } from "../package.json";
 // =============================
 
 const initialCode = `
-type Type = { 
+/** Example description... */
+type Person = { 
   id: string
   name: string
+  /** The mailing address of the person. */
   address: {
     street: string[]
     city: string
@@ -18,19 +20,9 @@ type Type = {
     state: string
     postalCode: string
   }
+
   age: number
 }
-
-interface Shape {
-  color: string;
-}
- 
-/** TSDoc description of this interface */
-interface Square extends Shape {
-  /** TSDoc description of this variable */
-  sideLength: number;
-}
-
 `;
 
 const worker = new Worker(new URL("./worker.js", import.meta.url), {
