@@ -3,6 +3,12 @@ import { useDebounce } from "react-use";
 import Editor from "@monaco-editor/react";
 import { dependencies, devDependencies } from "../package.json";
 
+// Get all dependencies except ts-to-jsdoc (which highlighted).
+const otherDependencies = Object.keys({
+  ...dependencies,
+  ...devDependencies,
+}).filter((dependency) => dependency !== "ts-to-jsdoc");
+
 // =============================
 // Constants
 // =============================
@@ -72,27 +78,22 @@ function App() {
           <div>Made possible by the following dependencies: </div>
 
           <nav className="flex gap-x-3 gap-y-1 flex-wrap">
-            {Object.keys({ ...dependencies, ...devDependencies }).map(
-              (dependency) => {
-                return (
-                  <Fragment key={dependency}>
-                    {" "}
-                    {dependency === "ts-to-jsdoc" ? (
-                      <a
-                        href={`https://www.npmjs.com/package/${dependency}`}
-                        className="text-orange-400 hover:text-orange-500 focus:text-orange-500"
-                      >
-                        {dependency}
-                      </a>
-                    ) : (
-                      <a href={`https://www.npmjs.com/package/${dependency}`}>
-                        {dependency}
-                      </a>
-                    )}
-                  </Fragment>
-                );
-              }
-            )}
+            <a
+              href={`https://www.npmjs.com/package/ts-to-jsdoc`}
+              className="text-orange-400 hover:text-orange-500 focus:text-orange-500"
+            >
+              ts-to-jsdoc
+            </a>
+            {otherDependencies.map((dependency) => {
+              return (
+                <Fragment key={dependency}>
+                  {" "}
+                  <a href={`https://www.npmjs.com/package/${dependency}`}>
+                    {dependency}
+                  </a>
+                </Fragment>
+              );
+            })}
           </nav>
 
           <div className="pt-8">
