@@ -10,13 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ts-to-jsdoc": "^2.1.2",
-    "ts-morph": "^23.0.0",
     "@monaco-editor/react": "^4.6.0",
-    "typescript": "^5.5.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-use": "^17.5.1"
+    "react-use": "^17.5.1",
+    "ts-to-jsdoc": "^2.2.0",
+    "typescript": "^5.5.4"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

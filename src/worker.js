@@ -1,4 +1,4 @@
-import { transpileFile } from "./utils/transform";
+import { transpileFile } from "ts-to-jsdoc";
 
 onmessage = function (event) {
   if (!event.data) return;
@@ -8,7 +8,7 @@ onmessage = function (event) {
   const input = `${event.data.trim()};\n`;
 
   try {
-    const transpiledResult = transpileFile({ code: input });
+    const transpiledResult = transpileFile({ code: input, inMemory: true });
 
     // Ensure all lone semi colons are removed.
     const result = transpiledResult.replace(/^;\n/gm, "");
