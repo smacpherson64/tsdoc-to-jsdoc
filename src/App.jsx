@@ -59,7 +59,7 @@ function App() {
         </header>
 
         <main className="grid lg:grid-cols-2 w-full text-gray-300 flex-1 overflow-x-hidden">
-          <section className=" h-full text-slate-400 w-full ring-2 ring-slate-700 focus-within:ring-blue-900 font-mono">
+          <section className="h-full text-slate-400 w-full ring-2 ring-slate-700 focus-within:ring-blue-900 font-mono">
             <Editor
               height="100%"
               defaultLanguage="typescript"
@@ -79,7 +79,7 @@ function App() {
 
           <nav className="flex gap-x-3 gap-y-1 flex-wrap">
             <a
-              href={`https://www.npmjs.com/package/ts-to-jsdoc`}
+              href="https://www.npmjs.com/package/ts-to-jsdoc"
               className="text-orange-400 hover:text-orange-500 focus:text-orange-500"
             >
               ts-to-jsdoc
